@@ -31,10 +31,11 @@ Usage:
 
     .. code-block:: console
 
-        cdvirtualenv src/invenio-marc21
         pip install -e .[all]
-        pip install invenio-theme==1.0.0a9
+        pip install git+git://github.com/inveniosoftware/dojson.git
         pip install invenio-assets==1.0.0a4
+        pip install invenio-pidstore==1.0.0a5
+        pip install invenio-theme==1.0.0a9
 
 2. Create database and tables:
 
@@ -55,6 +56,7 @@ invenio_records/data/marc21/bibliographic.xml):
             master/invenio_records/data/marc21/bibliographic.xml"
         $ dojson -i bibliographic.xml -l marcxml do marc21 | \
             flask -a app.py records create
+
         $ flask -a app.py fixtures records
 
 4. Download javascript and css libraries:
